@@ -243,6 +243,7 @@ export default function QuizPage() {
       </div>
 
       <QuizCard
+        key={currentQuestion}
         questionNumber={currentQuestion + 1}
         totalQuestions={questions.length}
         question={questions[currentQuestion].question}
