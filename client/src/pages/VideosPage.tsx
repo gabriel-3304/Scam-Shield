@@ -14,6 +14,7 @@ export default function VideosPage() {
       title: language === 'zh' ? '识别电话诈骗' : language === 'ms' ? 'Kenali Penipuan Telefon' : 'Recognize Phone Scams',
       description: language === 'zh' ? '学习如何识别可疑电话并保护自己' : language === 'ms' ? 'Belajar bagaimana mengenali panggilan mencurigakan dan lindungi diri' : 'Learn how to identify suspicious phone calls and protect yourself',
       thumbnail: '📞',
+      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with your actual video URL
       testId: 'card-video-phone'
     },
     {
@@ -21,6 +22,7 @@ export default function VideosPage() {
       title: language === 'zh' ? '诈骗者的伎俩' : language === 'ms' ? 'Taktik Penipu' : 'How Scammers Trick Victims',
       description: language === 'zh' ? '了解诈骗者常用的心理操纵技巧' : language === 'ms' ? 'Fahami teknik manipulasi psikologi yang digunakan penipu' : 'Understand the psychological manipulation techniques scammers use',
       thumbnail: '🎭',
+      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with your actual video URL
       testId: 'card-video-tactics'
     },
     {
@@ -28,6 +30,7 @@ export default function VideosPage() {
       title: language === 'zh' ? 'ACT原则：询问、核实、告知' : language === 'ms' ? 'ACT: Tanya, Semak, Beritahu' : 'ACT: Ask, Check, Tell',
       description: language === 'zh' ? '三步保护自己免受诈骗' : language === 'ms' ? 'Tiga langkah untuk melindungi diri dari penipuan' : 'Three steps to protect yourself from scams',
       thumbnail: '✅',
+      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with your actual video URL
       testId: 'card-video-act'
     },
     {
@@ -35,6 +38,7 @@ export default function VideosPage() {
       title: language === 'zh' ? '网络钓鱼识别' : language === 'ms' ? 'Kenali Pancingan Data' : 'Spot Phishing Attempts',
       description: language === 'zh' ? '识别虚假电子邮件和网站' : language === 'ms' ? 'Kenali e-mel dan laman web palsu' : 'Identify fake emails and websites',
       thumbnail: '🎣',
+      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with your actual video URL
       testId: 'card-video-phishing'
     },
     {
@@ -42,6 +46,7 @@ export default function VideosPage() {
       title: language === 'zh' ? '保护您的个人信息' : language === 'ms' ? 'Lindungi Maklumat Peribadi' : 'Protect Your Personal Information',
       description: language === 'zh' ? '了解如何安全地保管您的敏感数据' : language === 'ms' ? 'Ketahui cara menjaga data sensitif anda dengan selamat' : 'Learn how to keep your sensitive data safe',
       thumbnail: '🔒',
+      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with your actual video URL
       testId: 'card-video-privacy'
     },
     {
@@ -49,13 +54,13 @@ export default function VideosPage() {
       title: language === 'zh' ? '遇到诈骗怎么办' : language === 'ms' ? 'Apa Yang Perlu Dilakukan Jika Tertipu' : 'What To Do If You\'ve Been Scammed',
       description: language === 'zh' ? '被骗后的即时行动步骤' : language === 'ms' ? 'Langkah segera selepas ditipu' : 'Immediate steps to take after being scammed',
       thumbnail: '🆘',
+      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with your actual video URL
       testId: 'card-video-response'
     }
   ];
 
-  const handlePlayVideo = (title: string) => {
-    console.log('Playing video:', title);
-    alert(`${language === 'zh' ? '视频播放功能即将推出' : language === 'ms' ? 'Fungsi main video akan datang tidak lama lagi' : 'Video playback coming soon'}: ${title}`);
+  const handlePlayVideo = (videoUrl: string) => {
+    window.open(videoUrl, '_blank');
   };
 
   return (
@@ -85,7 +90,7 @@ export default function VideosPage() {
             title={video.title}
             description={video.description}
             thumbnail={video.thumbnail}
-            onPlay={() => handlePlayVideo(video.title)}
+            onPlay={() => handlePlayVideo(video.videoUrl)}
             testId={video.testId}
           />
         ))}
